@@ -9,22 +9,16 @@ class Index extends React.Component {
         <ul>
           {
                         comments.map((comment) => {
-                          const { name, color, readyToEat, _id } = comment
+                          const { commentText, votes, _id } = comment
                           return (
                             <li key={_id}>
                               <a href={`/comments/${_id}`}>
-                                {name}
-                              </a> is {color}
+                                {commentText}
+                              </a> has {votes}
 
                               <br />
-                              {
-                                        readyToEat
-                                          ? 'It\'s ready to eat'
-                                          : 'It\'s not ready to eat'
-                                    }
-                              <br />
                               <form method='POST' action={`/comments/${_id}?_method=DELETE`}>
-                                <input type='submit' value={`Delete ${color} ${name}`} />
+                                <input type='submit' value={`Delete comment with ${votes} votes`} />
                               </form>
                             </li>
                           )

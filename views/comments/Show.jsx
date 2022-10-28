@@ -3,10 +3,10 @@ const Default = require('../layouts/Default.jsx')
 
 class Show extends React.Component {
   render () {
-    const { name, color, readyToEat } = this.props.comment
+    const { commentText, votes } = this.props.comment
     return (
-      <Default title={`${name} Show Page`} comment={this.props.comment}>
-        <p>{name} is {color} and {readyToEat ? 'it\'s ready to eat' : 'it\'s not ready to eat'}</p>
+      <Default title={`Comment Show Page`} comment={this.props.comment}>
+        <p>"{commentText}" has {votes} votes</p>
       </Default>
     )
   }

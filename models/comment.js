@@ -3,8 +3,7 @@ const mongoose = require('mongoose')
 // Make A Schema
 const commentSchema = new mongoose.Schema({
   commentText: { type: String, required: true },
-  color: { type: String, required: true },
-  readyToEat: Boolean
+  votes: { type: Number, default: '0' },
 })
 
 // Make A Model From The Schema
