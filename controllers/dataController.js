@@ -55,7 +55,6 @@ const dataController = {
       }
     })
   },
-  // Edit
   // Show
   show (req, res, next) {
     Comment.findById(req.params.id, (err, foundComment) => {

@@ -2,28 +2,33 @@ const React = require('react')
 const Default = require('../layouts/Default.jsx')
 
 class Index extends React.Component {
-  render () {
+  render() {
     const { comments } = this.props
     return (
       <Default title='Comments Index Page'>
         <ul>
           {
-                        comments.map((comment) => {
-                          const { commentText, votes, _id } = comment
-                          return (
-                            <li key={_id}>
-                              <a href={`/comments/${_id}`}>
-                                {commentText}
-                              </a> has {votes}
+            comments.map((comment) => {
+              const { commentText, votes, _id } = comment
+              return (
+                <li key={_id}>
+                  <a href={`/comments/${_id}`}>
+                    {commentText}
+                  </a> has {votes} votes
 
-                              <br />
-                              <form method='POST' action={`/comments/${_id}?_method=DELETE`}>
-                                <input type='submit' value={`Delete comment with ${votes} votes`} />
-                              </form>
-                            </li>
-                          )
-                        })
-                    }
+                  <br />
+                  <form method='POST' action={`/comments/${_id}?_method=PUT`}>
+                    <button type='submit' name='votes' value={votes+1}>
+                    +1
+                    </button>
+                    <button type='submit' name='votes' value={votes-1}>
+                    -1
+                    </button>
+                  </form>
+                </li>
+              )
+            })
+          }
         </ul>
       </Default>
     )
