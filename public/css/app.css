@@ -25,7 +25,6 @@ body {
 
 li {
     background-color:white ;
-    border-color: red;
     border-radius: 15px;
     padding: 15px;
     margin-top: .5rem;
@@ -35,6 +34,7 @@ li {
     display:flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 10px 5px 5px rgb(162, 162, 162);
 }
 
 
