@@ -1,7 +1,7 @@
 const React = require('react')
 
 class Default extends React.Component {
-  render () {
+  render() {
     const { comment, title } = this.props
     return (
       <html>
@@ -9,16 +9,16 @@ class Default extends React.Component {
           <link rel='stylesheet' href='/css/app.css' />
           <title>{title}</title>
         </head>
-        <body>
+        <header>
           <nav>
-            <a href='/comments'>Go to Home Page For Comments</a>
-            <a href='/comments/new'>Create a New Comment</a>
-            {comment ? <a href={`/comments/${comment._id}/edit`}> {comment.name} Edit Page </a> : ''}
-            {comment ? <a href={`/comments/${comment._id}`}>{comment.name} Show Page</a> : ''}
+            <a href='/comments'>View All Comments</a>
           </nav>
+          <br />
           <h1>
             {title}
           </h1>
+        </header>
+        <body>
           {this.props.children}
         </body>
       </html>

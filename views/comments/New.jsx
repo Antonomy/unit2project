@@ -6,9 +6,9 @@ class New extends React.Component {
     return (
       <Default title='Create A New Comment'>
         <form method='POST' action='/comments'>
-          Comment: <input type='text' name='commentText' placeholder='Comment Here' /><br />
+          Comment: <input type='text' name='commentText' placeholder='Comment Here' size="100"/><br />
           {/* Votes: <input type='number' name='votes' placeholder='0' /><br /> */}
-          <input type='submit' value='Submit Comment' />
+          <input type='submit' value='Submit Comment'/>
         </form>
       </Default>
     )
