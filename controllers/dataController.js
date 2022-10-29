@@ -1,28 +1,28 @@
-const Comment = require('../models/comment')
+const Prompt = require('../models/prompt')
 
 const dataController = {
   // Index,
   index (req, res, next) {
-    Comment.find({}, (err, foundComments) => {
+    Prompt.find({}, (err, foundPrompts) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.comments = foundComments
+        res.locals.data.prompts = foundPrompts
         next()
       }
     })
   },
   // Destroy
   destroy (req, res, next) {
-    Comment.findByIdAndDelete(req.params.id, (err, deletedComment) => {
+    Prompt.findByIdAndDelete(req.params.id, (err, deletedPrompt) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.comment = deletedComment
+        res.locals.data.prompt = deletedPrompt
         next()
       }
     })
@@ -30,13 +30,13 @@ const dataController = {
   // Update
   update (req, res, next) {
     req.body.readyToEat = req.body.readyToEat === 'on'
-    Comment.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedComment) => {
+    Prompt.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPrompt) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.comment = updatedComment
+        res.locals.data.prompt = updatedPrompt
         next()
       }
     })
@@ -44,27 +44,27 @@ const dataController = {
   // Create
   create (req, res, next) {
     req.body.readyToEat = req.body.readyToEat === 'on'
-    Comment.create(req.body, (err, createdComment) => {
+    Prompt.create(req.body, (err, createdPrompt) => {
       if (err) {
         res.status(400).send({
           msg: err.message
         })
       } else {
-        res.locals.data.comment = createdComment
+        res.locals.data.prompt = createdPrompt
         next()
       }
     })
   },
   // Show
   show (req, res, next) {
-    Comment.findById(req.params.id, (err, foundComment) => {
+    Prompt.findById(req.params.id, (err, foundPrompt) => {
       if (err) {
         res.status(404).send({
           msg: err.message,
-          output: 'Could not find a comment with that ID'
+          output: 'Could not find a prompt with that ID'
         })
       } else {
-        res.locals.data.comment = foundComment
+        res.locals.data.prompt = foundPrompt
         next()
       }
     })

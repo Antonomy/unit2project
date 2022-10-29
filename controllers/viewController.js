@@ -1,23 +1,23 @@
-const RESOURCE_PATH = '/comments'
+const RESOURCE_PATH = '/prompts'
 
 const viewController = {
   index (req, res, next) {
-    res.render('comments/Index', res.locals.data)
+    res.render('prompts/Index', res.locals.data)
   },
   newView (req, res, next) {
-    res.render('comments/New')
+    res.render('prompts/New')
   },
   edit (req, res, next) {
-    res.render('comments/Edit', res.locals.data)
+    res.render('prompts/Edit', res.locals.data)
   },
   show (req, res, next) {
-    res.render('comments/Show', res.locals.data)
+    res.render('prompts/Show', res.locals.data)
   },
   redirectHome (req, res, next) {
     res.redirect(RESOURCE_PATH)
   },
   redirectShow (req, res, next) {
-    res.redirect(`${RESOURCE_PATH}/${res.locals.data.comment.id}`)
+    res.redirect(`${RESOURCE_PATH}/${res.locals.data.prompt.id}`)
   }
 
 }

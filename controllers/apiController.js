@@ -1,9 +1,9 @@
 const apiController = {
     index(req, res, next){
-      res.json(res.locals.data.comments)
+      res.json(res.locals.data.prompts)
     },
     show(req, res, next){
-      res.json(res.locals.data.comment)
+      res.json(res.locals.data.prompt)
     }
   }
   

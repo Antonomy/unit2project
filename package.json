@@ -19,5 +19,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "This app was inspired by Reddit. The goal is to create an open and transparent way to solicit and give feedback. It can be used to pick a name for the school mascot, propose solutions for sensitive issues at work, or even to choose the destination for a vacation with friends.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antonomy/unit2project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Antonomy/unit2project/issues"
+  },
+  "homepage": "https://github.com/Antonomy/unit2project#readme"
 }

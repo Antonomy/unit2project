@@ -3,7 +3,7 @@ const Default = require('../layouts/Default.jsx')
 
 class Index extends React.Component {
   render() {
-    const { comments } = this.props
+    const { prompts } = this.props
     return (
       <Default title='Suggestions Box'>
         <h2>
@@ -12,12 +12,12 @@ class Index extends React.Component {
 
         <ul>
           {
-            comments.map((comment) => {
-              const { commentText, votes, _id } = comment
+            prompts.map((prompt) => {
+              const { promptText, votes, _id } = prompt
               return (
                 <li key={_id}>
                   <span id="votes">
-                    <form method='POST' action={`/comments/${_id}?_method=PUT`}>
+                    <form method='POST' action={`/prompts/${_id}?_method=PUT`}>
                       <button type='submit' name='votes' value={votes + 1}>
                         ^
                       </button>
@@ -27,10 +27,10 @@ class Index extends React.Component {
                       </button>
                     </form>
                   </span>
-                  <a href={`/comments/${_id}`}>
-                    {commentText}
+                  <a href={`/prompts/${_id}`}>
+                    {promptText}
                   </a>
-                  <form method='POST' action={`/comments/${_id}?_method=DELETE`}>
+                  <form method='POST' action={`/prompts/${_id}?_method=DELETE`}>
                     <input type='submit' value={`X`} />
                   </form>
                 </li>
@@ -39,7 +39,7 @@ class Index extends React.Component {
           }
         </ul>
         <br />
-        <a href='/comments/new'>Add Comment</a>
+        <a href='/prompts/new'>Add Prompt</a>
       </Default>
     )
   }

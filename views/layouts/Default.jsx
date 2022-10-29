@@ -2,7 +2,7 @@ const React = require('react')
 
 class Default extends React.Component {
   render() {
-    const { comment, title } = this.props
+    const { prompt, title } = this.props
     return (
       <html>
         <head>
@@ -11,7 +11,7 @@ class Default extends React.Component {
         </head>
         <header>
           <nav>
-            <a href='/comments'>View All Comments</a>
+            <a href='/prompts'>View All Prompts</a>
           </nav>
           <br />
           <h1>
