@@ -5,9 +5,9 @@ class Index extends React.Component {
   render() {
     const { comments } = this.props
     return (
-      <Default title='Comments Index Page'>
+      <Default title='Suggestions Box'>
         <h2>
-          What would you like to do today?
+          Where do we want to go on vacation?
         </h2>
 
         <ul>
@@ -30,6 +30,9 @@ class Index extends React.Component {
                   <a href={`/comments/${_id}`}>
                     {commentText}
                   </a>
+                  <form method='POST' action={`/comments/${_id}?_method=DELETE`}>
+                    <input type='submit' value={`X`} />
+                  </form>
                 </li>
               )
             })
