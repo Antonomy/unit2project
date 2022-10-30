@@ -13,7 +13,7 @@ const promptDataController = {
         res.locals.data.prompts = foundPrompts
         next()
       }
-    })
+    }).sort({votes:-1})
   },
   // Destroy
   destroy(req, res, next) {
@@ -67,7 +67,7 @@ const promptDataController = {
           res.locals.data.prompt = { prompt: foundPrompt, comment: foundComment }
           next()
         }
-      })
+      }).sort({votes:-1})
     }
     )
   }

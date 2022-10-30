@@ -16,7 +16,7 @@ class Show extends React.Component {
               const { commentText, votes} = comment
               return (
                 <li key={comment._id}>
-                  {/* <span id="votes">
+                  <span id="votes">
                     <form method='POST' action={`/prompts/${comment._id}/comment?_method=PUT`}>
                       <button type='submit' name='votes' value={votes + 1}>
                         ^
@@ -26,7 +26,7 @@ class Show extends React.Component {
                         ^
                       </button>
                     </form>
-                  </span> */}
+                  </span>
                     {commentText}
                   <form method='POST' action={`/prompts/${comment._id}/comment?_method=DELETE`}>
                     <input type='submit' value={`X`} />
@@ -38,7 +38,7 @@ class Show extends React.Component {
         </ul>
 
         <form method='POST' action={`/prompts/${_id}/newcomment`}>
-          Comment: <input type='text' name='commentText' placeholder='Comment Here' size="100"/><br />
+          Add a Comment: <input type='text' name='commentText' placeholder='Comment Here' size="100"/><br />
           <input type="hidden" name="promptId" value={_id} />
           <input type='submit' value='Submit Comment'/>
         </form>

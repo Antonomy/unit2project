@@ -15,3 +15,6 @@ class New extends React.Component {
 }
 
 module.exports = New
+
+
+//CURRENTLY NOT USED - EMBEDDED INTO INDEX PAGE

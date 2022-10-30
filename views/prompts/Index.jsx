@@ -39,7 +39,10 @@ class Index extends React.Component {
           }
         </ul>
         <br />
-        <a href='/prompts/new'>Add Prompt</a>
+        <form method='POST' action='/prompts'>
+          Add a new Prompt: <input type='text' name='promptText' placeholder='Prompt Here' size="100"/><br />
+          <input type='submit' value='Submit Prompt'/>
+        </form>
       </Default>
     )
   }

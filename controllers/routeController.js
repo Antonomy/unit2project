@@ -12,9 +12,9 @@ router.get('/new', viewController.newView)
 // Delete
 router.delete('/:id', promptDataController.destroy, viewController.redirectHome)
 // Update
-router.put('/:id', promptDataController.update, viewController.redirectShow)
+router.put('/:id', promptDataController.update, viewController.redirectHome)
 // Create Prompt
-router.post('/', promptDataController.create, viewController.redirectShow)
+router.post('/', promptDataController.create, viewController.redirectHome)
 // Edit
 router.get('/:id/edit', promptDataController.show, viewController.edit)
 // Show
@@ -23,7 +23,7 @@ router.get('/:id', promptDataController.show, viewController.show)
 // Comments Routing
 
 // Delete
-router.delete('/:id/comment', commentDataController.destroy, viewController.redirectHome)
+router.delete('/:id/comment', commentDataController.destroy, viewController.redirectShow)
 // Update
 router.put('/:id/comment', commentDataController.update, viewController.redirectShow)
 // Create
