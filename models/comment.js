@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const commentSchema = new mongoose.Schema({
   commentText: { type: String, required: true },
   votes: { type: Number, default: '0' },
+  promptId: { type: String }
 })
 
 // Make A Model From The Schema

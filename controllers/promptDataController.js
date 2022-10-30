@@ -1,8 +1,9 @@
 const Prompt = require('../models/prompt')
+const Comment = require('../models/comment')
 
-const dataController = {
+const promptDataController = {
   // Index,
-  index (req, res, next) {
+  index(req, res, next) {
     Prompt.find({}, (err, foundPrompts) => {
       if (err) {
         res.status(400).send({
@@ -15,7 +16,7 @@ const dataController = {
     })
   },
   // Destroy
-  destroy (req, res, next) {
+  destroy(req, res, next) {
     Prompt.findByIdAndDelete(req.params.id, (err, deletedPrompt) => {
       if (err) {
         res.status(400).send({
@@ -28,8 +29,7 @@ const dataController = {
     })
   },
   // Update
-  update (req, res, next) {
-    req.body.readyToEat = req.body.readyToEat === 'on'
+  update(req, res, next) {
     Prompt.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPrompt) => {
       if (err) {
         res.status(400).send({
@@ -42,8 +42,7 @@ const dataController = {
     })
   },
   // Create
-  create (req, res, next) {
-    req.body.readyToEat = req.body.readyToEat === 'on'
+  create(req, res, next) {
     Prompt.create(req.body, (err, createdPrompt) => {
       if (err) {
         res.status(400).send({
@@ -56,19 +55,22 @@ const dataController = {
     })
   },
   // Show
-  show (req, res, next) {
+  show(req, res, next) {
     Prompt.findById(req.params.id, (err, foundPrompt) => {
-      if (err) {
-        res.status(404).send({
-          msg: err.message,
-          output: 'Could not find a prompt with that ID'
-        })
-      } else {
-        res.locals.data.prompt = foundPrompt
-        next()
-      }
-    })
+      Comment.find({promptId: req.params.id}, (err, foundComment) => {
+        if (err) {
+          res.status(404).send({
+            msg: err.message,
+            output: 'Could not find a prompt with that ID'
+          })
+        } else {
+          res.locals.data.prompt = { prompt: foundPrompt, comment: foundComment }
+          next()
+        }
+      })
+    }
+    )
   }
 }
 
-module.exports = dataController
+module.exports = promptDataController
