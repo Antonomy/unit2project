@@ -7,15 +7,17 @@ class Show extends React.Component {
     const [...comments] = this.props.prompt.comment
     return (
       <Default title={`Prompt Show Page`} prompt={this.props.prompt}>
-        <p>"{promptText}" has {votes} votes</p>
+        <span id="prompt">
+        <p>"{promptText}"</p>
+        <p>{votes} votes</p>
         <a href={`/prompts/${_id}/edit`}>Edit</a>
-
+        </span>
         <ul>
           {
             comments.map((comment) => {
               const { commentText, votes} = comment
               return (
-                <li key={comment._id}>
+                <li key={comment._id} class="comment">
                   <span id="votes">
                     <form method='POST' action={`/prompts/${comment._id}/comment?_method=PUT`}>
                       <button type='submit' name='votes' value={votes + 1}>

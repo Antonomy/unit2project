@@ -6,10 +6,6 @@ class Index extends React.Component {
     const { prompts } = this.props
     return (
       <Default title='Suggestions Box'>
-        <h2>
-          Where do we want to go on vacation?
-        </h2>
-
         <ul>
           {
             prompts.map((prompt) => {

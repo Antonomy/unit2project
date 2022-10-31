@@ -22,6 +22,20 @@ body {
     flex-direction: column;
     align-items: center;
 }
+#prompt {
+    background-color:white ;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 50vw;
+    list-style-type: none;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 5px 5px rgb(162, 162, 162);
+}
 
 li {
     background-color:white ;
@@ -37,6 +51,10 @@ li {
     box-shadow: 10px 5px 5px rgb(162, 162, 162);
 }
 
+.comment {
+    background-color:rgb(141, 152, 225) ;
+
+}
 
 #votes>form {
     display: flex;
