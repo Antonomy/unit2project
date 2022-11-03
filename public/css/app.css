@@ -51,6 +51,13 @@ li {
     box-shadow: 10px 5px 5px rgb(162, 162, 162);
 }
 
+li:hover {
+    background-color:rgb(204, 215, 251) ;
+    border-style: solid;
+    border-color: rgb(72, 72, 179);
+}
+
+
 .comment {
     background-color:rgb(141, 152, 225) ;
 
@@ -72,6 +79,26 @@ li>a{
     padding: 1rem;
 }
 
+.commentText{
+    flex-grow: 100;
+    padding: 1rem;
+}
+
 button{
     width:100%;
+    border:none;
+    background-color:transparent;
+    outline:none;
+}
+
+.voteButton{
+    width: 100%;
+}
+
+.voteButton:hover{
+    cursor: pointer;
+}
+
+#deleteimg{
+ width: 30%;
 }

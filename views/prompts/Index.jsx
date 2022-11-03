@@ -15,11 +15,11 @@ class Index extends React.Component {
                   <span id="votes">
                     <form method='POST' action={`/prompts/${_id}?_method=PUT`}>
                       <button type='submit' name='votes' value={votes + 1}>
-                      <img src="/images/upvote.png" />
+                        <img class="voteButton" src="/images/upvote.png" />
                       </button>
                       {votes}
                       <button type='submit' name='votes' value={votes - 1}>
-                      <img src="/images/downvote.png" />
+                        <img class="voteButton" src="/images/downvote.png" />
                       </button>
                     </form>
                   </span>
@@ -27,7 +27,9 @@ class Index extends React.Component {
                     {promptText}
                   </a>
                   <form method='POST' action={`/prompts/${_id}?_method=DELETE`}>
-                    <input type='submit' value={`X`} />
+                    <button type='submit'>
+                      <img id="deleteimg" class="voteButton" src="/images/delete.png" />
+                    </button>
                   </form>
                 </li>
               )
@@ -36,8 +38,8 @@ class Index extends React.Component {
         </ul>
         <br />
         <form method='POST' action='/prompts'>
-          Add a new Prompt: <input type='text' name='promptText' placeholder='Prompt Here' size="100"/><br />
-          <input type='submit' value='Submit Prompt'/>
+          Add a new Prompt: <input type='text' name='promptText' placeholder='Prompt Here' size="100" /><br />
+          <input type='submit' value='Submit Prompt' />
         </form>
       </Default>
     )
