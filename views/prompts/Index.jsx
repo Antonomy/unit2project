@@ -15,11 +15,11 @@ class Index extends React.Component {
                   <span id="votes">
                     <form method='POST' action={`/prompts/${_id}?_method=PUT`}>
                       <button type='submit' name='votes' value={votes + 1}>
-                        ^
+                      <img src="/images/upvote.png" />
                       </button>
                       {votes}
-                      <button type='submit' name='votes' value={votes - 1} id="upsidedown">
-                        ^
+                      <button type='submit' name='votes' value={votes - 1}>
+                      <img src="/images/downvote.png" />
                       </button>
                     </form>
                   </span>

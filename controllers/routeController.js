@@ -23,9 +23,9 @@ router.get('/:id', promptDataController.show, viewController.show)
 // Comments Routing
 
 // Delete
-router.delete('/:id/comment', commentDataController.destroy, viewController.redirectShow)
+router.delete('/:id/comment', commentDataController.destroy)
 // Update
-router.put('/:id/comment', commentDataController.update, viewController.redirectShow)
+router.put('/:id/comment', commentDataController.update)
 // Create
 router.post('/:id/newcomment', commentDataController.create, viewController.redirectShow)
 

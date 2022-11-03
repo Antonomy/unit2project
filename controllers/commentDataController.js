@@ -10,7 +10,8 @@ const commentDataController = {
         })
       } else {
         res.locals.data.comment = deletedComment
-        next()
+        res.redirect(`/prompts/${deletedComment.promptId}`)
+        // next()
       }
     })
   },
@@ -23,7 +24,7 @@ const commentDataController = {
         })
       } else {
         res.locals.data.comment = updatedComment
-        next()
+        res.redirect(`/prompts/${updatedComment.promptId}`)
       }
     })
   },
