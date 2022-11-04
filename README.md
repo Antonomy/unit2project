@@ -3,6 +3,10 @@
 This app was inspired by Reddit. The goal is to create an open and transparent way to solicit and give feedback. It can be used to pick a name for the school mascot, propose solutions for sensitive issues at work, or even to choose the destination for a vacation with friends.
 
 Screenshots:
+![ERD](/public/images/ERD.png)
+![Kanban Board](/public/images/KanbanBoard.png)
+![Wireframe](/public/images/Wireframe.png)
+
 
 Technologies Used:
 JavaScript, HTML, CSS, Mongoose, Express, MethodOverride, CORS

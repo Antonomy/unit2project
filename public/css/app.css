@@ -77,6 +77,9 @@ li:hover {
 li>a{
     flex-grow: 100;
     padding: 1rem;
+    text-decoration: none;
+    color:black;
+    height: 100%;
 }
 
 .commentText{
