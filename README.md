@@ -9,7 +9,7 @@
 <h3 align="center">Custom Reddit</h3>
 
   <p align="center">
-    Simple To-Do list functionality utilizing the MERN stack, REST Architecture, and MVC Framework. 
+    An application to create an open and transparent way to solicit and give feedback.
     <br />
     <a href="https://github.com/Antonomy/Custom-Reddit"><strong>Explore the docs »</strong></a>
     <br />
@@ -47,7 +47,7 @@
 ## About The Project
 This app was inspired by Reddit. The goal is to create an open and transparent way to solicit and give feedback. It can be used to pick a name for the school mascot, propose solutions for sensitive issues at work, or even to choose the destination for a vacation with friends.
 
-![To-Do List Screen Shot](./public/app_image.png)
+![Custom Reddit Screen Shot](./public/images/app_image.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -98,10 +98,7 @@ This is an example of how to list things you need to use the software and how to
    ```
    npm run dev
    ```
-7. Start Front-End
-   ```
-   npm run react
-   ```
+7. Go to `http://localhost:3000/prompts`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
