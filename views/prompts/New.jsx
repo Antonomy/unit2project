@@ -6,8 +6,8 @@ class New extends React.Component {
     return (
       <Default title='Create A New Prompt'>
         <form method='POST' action='/prompts'>
-          Prompt: <input type='text' name='promptText' placeholder='Prompt Here' size="100"/><br />
-          <input type='submit' value='Submit Prompt'/>
+          Prompt: <input type='text' name='promptText' placeholder='Prompt Here' size='100' /><br />
+          <input type='submit' value='Submit Prompt' />
         </form>
       </Default>
     )
@@ -16,5 +16,4 @@ class New extends React.Component {
 
 module.exports = New
 
-
-//CURRENTLY NOT USED - EMBEDDED INTO INDEX PAGE
+// CURRENTLY NOT USED - EMBEDDED INTO INDEX PAGE

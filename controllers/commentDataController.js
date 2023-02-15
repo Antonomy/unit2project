@@ -2,7 +2,7 @@ const Comment = require('../models/comment')
 
 const commentDataController = {
   // Destroy
-  destroy(req, res, next) {
+  destroy (req, res, next) {
     Comment.findByIdAndDelete(req.params.id, (err, deletedComment) => {
       if (err) {
         res.status(400).send({
@@ -16,7 +16,7 @@ const commentDataController = {
     })
   },
   // Update
-  update(req, res, next) {
+  update (req, res, next) {
     Comment.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedComment) => {
       if (err) {
         res.status(400).send({
@@ -29,7 +29,7 @@ const commentDataController = {
     })
   },
   // Create
-  create(req, res, next) {
+  create (req, res, next) {
     Comment.create(req.body, (err, createdComment) => {
       if (err) {
         res.status(400).send({

@@ -3,7 +3,7 @@ const Comment = require('../models/comment')
 
 const promptDataController = {
   // Index,
-  index(req, res, next) {
+  index (req, res, next) {
     Prompt.find({}, (err, foundPrompts) => {
       if (err) {
         res.status(400).send({
@@ -13,10 +13,10 @@ const promptDataController = {
         res.locals.data.prompts = foundPrompts
         next()
       }
-    }).sort({votes:-1})
+    }).sort({ votes: -1 })
   },
   // Destroy
-  destroy(req, res, next) {
+  destroy (req, res, next) {
     Prompt.findByIdAndDelete(req.params.id, (err, deletedPrompt) => {
       if (err) {
         res.status(400).send({
@@ -29,7 +29,7 @@ const promptDataController = {
     })
   },
   // Update
-  update(req, res, next) {
+  update (req, res, next) {
     Prompt.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedPrompt) => {
       if (err) {
         res.status(400).send({
@@ -42,7 +42,7 @@ const promptDataController = {
     })
   },
   // Create
-  create(req, res, next) {
+  create (req, res, next) {
     Prompt.create(req.body, (err, createdPrompt) => {
       if (err) {
         res.status(400).send({
@@ -55,9 +55,9 @@ const promptDataController = {
     })
   },
   // Show
-  show(req, res, next) {
+  show (req, res, next) {
     Prompt.findById(req.params.id, (err, foundPrompt) => {
-      Comment.find({promptId: req.params.id}, (err, foundComment) => {
+      Comment.find({ promptId: req.params.id }, (err, foundComment) => {
         if (err) {
           res.status(404).send({
             msg: err.message,
@@ -67,7 +67,7 @@ const promptDataController = {
           res.locals.data.prompt = { prompt: foundPrompt, comment: foundComment }
           next()
         }
-      }).sort({votes:-1})
+      }).sort({ votes: -1 })
     }
     )
   }

@@ -1,7 +1,7 @@
 const React = require('react')
 
 class Default extends React.Component {
-  render() {
+  render () {
     const { prompt, title } = this.props
     return (
       <html>

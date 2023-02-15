@@ -17,7 +17,7 @@ const viewController = {
     res.redirect(RESOURCE_PATH)
   },
   redirectShow (req, res, next) {
-    const promptId= req.params.id || res.locals.data.prompt._id
+    const promptId = req.params.id || res.locals.data.prompt._id
     res.redirect(`${RESOURCE_PATH}/${promptId}`)
   }
 

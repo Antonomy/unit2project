@@ -22,7 +22,6 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use('/prompts', require('./controllers/routeController'))
 
-
 app.listen(3000, () => {
   console.log('Listening on Port 3000')
 })
